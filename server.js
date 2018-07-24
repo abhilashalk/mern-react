@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-
+console.log("the server is started")
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
     const path = require('path');
@@ -13,10 +13,8 @@ if (process.env.NODE_ENV === "production") {
 
 
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/mern-react",
-    {
-        useMongoClient: true
-    }
+    process.env.MONGODB_URI || "mongodb://localhost/mern-react"
+
 );
 const PORT = process.env.PORT || 3001;
 app.listen(PORT);

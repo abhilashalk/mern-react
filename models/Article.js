@@ -3,14 +3,13 @@ var Schema = mongoose.Schema;
 
 
 var ArticleSchema = new Schema({
-    title: {
+    article: {
         type: String,
         trim: true,
         required: "Title Required"
     },
     date: {
         type: Date,
-        default: Date.now,
         required: "Date Required"
     },
     url: {
@@ -22,7 +21,7 @@ var ArticleSchema = new Schema({
 });
 
 // Create the Model
-var Article = mongoose.model('Article', ArticleSchema);
+var Article = mongoose.model("Article", ArticleSchema);
 
 // Export model
 module.exports = Article; 
